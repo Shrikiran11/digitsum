@@ -15,34 +15,20 @@ public class HomeServiceImpl implements IHomeService
 	public Home addHome(Home home) throws SQLException
 	{
 		IHomeDao idao=new HomeDaoImpl();
-		int addNo=home.getAddNo();
-		String loc=home.getLoc();
-		String style=home.getStyle();
-		String paint=home.getPaint();
-		String bhk=home.getBhk();
-		String floor=home.getFloor();
-		int rent=home.getRent();
-		if(isValidAddNo(addNo)==true&&isValidLocation(loc)==true&&isValidStyle(style)==true&&isValidPaint(paint)==true&&isValidBhk(bhk)==true&&isValidFloor(floor)==true&&isValidRent(rent)==true)	
 		idao.addHome(home);
-		else
-			System.err.println("Invalid values");
 		return null;
 	}
 
 	@Override
 	public Home deleteHome(int tid) 
 	{
-		
 		IHomeDao idao=new HomeDaoImpl();
-		if(isValidAddNo(tid)==true)
 		idao.deleteHome(tid);
-		else
-			System.err.println("invalid door no");
 		return null;
 	}
 
 	@Override
-	public Home updateHome(Home car) throws SQLException 
+	public Home updateHome(Home home) throws SQLException 
 	{
 		IHomeDao idao2=new HomeDaoImpl();
 		idao2.updateHome(home);
@@ -50,14 +36,11 @@ public class HomeServiceImpl implements IHomeService
 	}
 
 	@Override
-	public List<Home> getByLoc(String loc) throws SQLException 
+	public List<Home> getByLoc(String name) throws SQLException 
 	{
 		IHomeDao idao=new HomeDaoImpl();
 		List<Home> homeList1=null;
-		if(isValidLocation(loc)==true)
-		homeList1 =idao.getByLoc(loc);
-		else
-			System.err.println("reEnter valid location");
+		homeList1 =idao.getByLoc(name);
 		return homeList1;
 	}
 
@@ -65,10 +48,7 @@ public class HomeServiceImpl implements IHomeService
 	public List<Home> getByAddNo(int id) throws SQLException {
 		IHomeDao idao=new HomeDaoImpl();
 		List<Home> homeList2=null;
-		if(isValidAddNo(id)==true)
 		homeList2 =idao.getByAddNo(id);
-		else
-			System.err.println("reEnter valid doorNo");
 		return homeList2;
 	}
 
@@ -85,77 +65,49 @@ public class HomeServiceImpl implements IHomeService
 	public Home UpdateAddNo(Home home) 
 	{
 		IHomeDao idao=new HomeDaoImpl();
-		int addNo=home.getAddNo();
-		if(isValidAddNo(addNo)==true)
 		idao.UpdateAddNo(home);
-		else
-			System.err.println("reEnter valid doorNo");
 		return null;
 	}
 
 	@Override
 	public Home UpdateLoc(Home home) {
 		IHomeDao idao=new HomeDaoImpl();
-		String loc=home.getLoc();
-		if(isValidLocation(loc)==true)
 		idao.UpdateLoc(home);
-		else
-			System.err.println("reEnter valid location");
 		return null;
 	}
 
 	@Override
 	public Home UpdateStyle(Home home) {
 		IHomeDao idao=new HomeDaoImpl();
-		String style=home.getStyle();
-		if(isValidStyle(style))
 		idao.UpdateStyle(home);
-		else
-			System.err.println("reEnter valid Style");
 		return null;
 	}
 
 	@Override
 	public Home UpdatePaint(Home home) {
 		IHomeDao idao=new HomeDaoImpl();
-		String paint=home.getPaint();
-		if(isValidPaint(paint))
 		idao.UpdatePaint(home);
-		else
-			System.err.println("reEnter valid Paint");
 		return null;
 	}
 
 	@Override
 	public Home UpdateBhk(Home home) {
 		IHomeDao idao=new HomeDaoImpl();
-		String bhk=home.getBhk();
-		if(isValidBhk(bhk))
 		idao.UpdateBhk(home);
-		else
-			System.err.println("reEnter valid Bhk");
 		return null;
 	}
 
 	@Override
 	public Home UpdateFloor(Home home) {
 		IHomeDao idao=new HomeDaoImpl();
-		String floor=home.getFloor();
-		if(isValidFloor(floor))
 		idao.UpdateFloor(home);
-		else
-			System.err.println("reEnter valid floor");
 		return null;
 	}
 
 	@Override
 	public Home UpdateRent(Home home) {
 		IHomeDao idao=new HomeDaoImpl();
-		int rent=home.getRent();
-		if(isValidRent(rent))
 		idao.UpdateRent(home);
-		else
-			System.err.println("reEnter valid rent");
 		return null;
 	}
 	public static boolean isValidLocation(String loc){

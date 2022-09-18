@@ -5,15 +5,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
-import com.cf.exception.HomeException;
 import com.cf.model.Home;
 import com.cf.repository.HomeDaoImpl;
 import com.cf.repository.IHomeDao;
 import com.cf.service.HomeServiceImpl;
 import com.cf.service.IHomeService;
 
-public class HomeUi{
-	public static void main(String[] args) throws HomeException {
+public class HomeUi {
+	public static void main(String[] args) {
 		Scanner scn = new Scanner(System.in);
 
 		System.out.println("************HOME RENTAL MANAGEMENT ************");

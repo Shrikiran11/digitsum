@@ -51,6 +51,9 @@ public class Home
 	public void setRent(int rent) {
 		this.rent = rent;
 	}
+	public Home() {
+		
+	}
 	public Home(int addNo)
 	{
 		super();
@@ -62,9 +65,9 @@ public class Home
 		this.addNo = addNo;
 		this.words = words;
 	}
-	public Home() {
-		
-	}
+	
+	
+	
 	public Home(int addNo, int numbers) {
 		super();
 		this.addNo = addNo;
