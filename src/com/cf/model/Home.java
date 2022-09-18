@@ -51,7 +51,31 @@ public class Home
 	public void setRent(int rent) {
 		this.rent = rent;
 	}
-	public home(int addNo, String loc, String style, String paint, String bhk, String floor, int rent) {
+	public Home(int addNo)
+	{
+		super();
+		this.addNo = addNo;
+	}
+	
+	public Home(int addNo, String words) {
+		super();
+		this.addNo = addNo;
+		this.words = words;
+	}
+	public Home() {
+		
+	}
+	public Home(int addNo, int numbers) {
+		super();
+		this.addNo = addNo;
+		this.numbers = numbers;
+	}
+	public Home(String loc) 
+	{
+		super();
+		this.loc = loc;
+	}
+	public Home(int addNo, String loc, String style, String paint, String bhk, String floor, int rent) {
 		super();
 		this.addNo = addNo;
 		this.loc = loc;
@@ -65,6 +89,20 @@ public class Home
 	public String toString() {
 		return "home [addNo=" + addNo + ", loc=" + loc + ", style=" + style + ", paint=" + paint + ", bhk=" + bhk
 				+ ", floor=" + floor + ", rent=" + rent + "]";
+	}
+	private String words;
+	private int numbers;
+	public String getWords() {
+		return words;
+	}
+	public void setWords(String words) {
+		this.words = words;
+	}
+	public int getNumbers() {
+		return numbers;
+	}
+	public void setNumbers(int numbers) {
+		this.numbers = numbers;
 	}
 
 }

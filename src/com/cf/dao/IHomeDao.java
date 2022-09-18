@@ -1,10 +1,9 @@
-package com.cf.service;
+package com.cf.dao;
 
 import java.util.List;
 
 import com.cf.model.Home;
-
-public interface IHomeService 
+public interface IHomeDao
 {
 	public abstract Home addHome(Home home) throws SQLException;
 	public abstract Home deleteHome(int tid);
@@ -21,5 +20,4 @@ public interface IHomeService
 	public abstract List<Home> getByLoc(String name) throws SQLException;
 	public abstract List<Home> getByAddNo(int id) throws SQLException; 
 	public abstract List<Home> displayAll() throws SQLException;
-
 }

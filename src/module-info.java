@@ -1,2 +1,2 @@
-module HomeRental {
+module HomeProperties {
 }
